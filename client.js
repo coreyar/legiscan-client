@@ -227,11 +227,7 @@ export class LegiscanClient {
    * @returns {Promise<Object[]>}
    */
   async getSearch(query, params = {}) {
-    var all = [];
-    for await (var result of this.getSearchAsync(query, params)) {
-      all.push(result);
-    }
-    return all;
+    return Array.fromAsync(this.getSearchAsync(query, params));
   }
 
   /**
