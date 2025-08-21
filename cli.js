@@ -62,7 +62,7 @@ for (var comment of parsed) {
 }
 
 // get the selected command from the dictionary and execute it
-var requested = commands[command];
+var requested = commands[command.toLowerCase()];
 // if not found, show some variation on help
 // "legsican-client help" also conveniently triggers this since there's no client.help()
 if (!requested) {
